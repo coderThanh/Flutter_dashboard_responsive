@@ -7,29 +7,32 @@ class MenuSideBarItem extends StatelessWidget {
   const MenuSideBarItem({
     Key? key,
     this.isActive = false,
-    this.onTab,
+    required this.onTab,
     required this.text,
     required this.assetsIcon,
   }) : super(key: key);
 
   final bool isActive;
-  final VoidCallback? onTab;
+  final VoidCallback onTab;
   final String text;
   final String assetsIcon;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTab,
-      child: Opacity(
-        opacity: isActive ? 1 : 0.5,
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: ThemeStyleDark.padding,
-            vertical: ThemeStyleDark.padding * 0.8,
-          ),
-          decoration: BoxDecoration(
-            color: isActive ? ThemeStyleDark.primary : Colors.transparent,
+    return Opacity(
+      opacity: isActive ? 1 : 0.5,
+      child: Container(
+        decoration: BoxDecoration(
+          color: isActive ? ThemeStyleDark.primary : Colors.transparent,
+        ),
+        child: TextButton(
+          onPressed: onTab,
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.symmetric(
+              horizontal: ThemeStyleDark.padding,
+              vertical: ThemeStyleDark.padding * 1.5,
+            ),
+            primary: Theme.of(context).splashColor,
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

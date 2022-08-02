@@ -31,35 +31,43 @@ class Sidebar extends StatelessWidget {
             SizedBox(height: ThemeStyleDark.padding * 4),
             MenuSideBarItem(
               text: "Dashboard",
+              onTab: () {},
               assetsIcon: ThemeIcon.menu,
             ),
             MenuSideBarItem(
               text: "Transaction",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuTran,
               isActive: true,
             ),
             MenuSideBarItem(
               text: "Task",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuTask,
             ),
             MenuSideBarItem(
               text: "Documents",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuFile,
             ),
             MenuSideBarItem(
               text: "Store",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuStore,
             ),
             MenuSideBarItem(
               text: "Notification",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuNotificate,
             ),
             MenuSideBarItem(
               text: "Account",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuProfile,
             ),
             MenuSideBarItem(
               text: "Settings",
+              onTab: () {},
               assetsIcon: ThemeIcon.menuSetting,
             ),
             SizedBox(height: ThemeStyleDark.padding * 2),

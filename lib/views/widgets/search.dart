@@ -9,11 +9,13 @@ class SearchDefault extends StatelessWidget {
     Key? key,
     this.width = 250,
     this.height = 45,
+    this.assetIcon,
     required this.onSubmit,
   }) : super(key: key);
 
   final double width;
   final double height;
+  final String? assetIcon;
   final void Function(String) onSubmit;
 
   @override
@@ -55,17 +57,21 @@ class SearchDefault extends StatelessWidget {
           const SizedBox(
             width: 5,
           ),
-          Material(
-            color: ThemeStyleDark.primary,
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-            child: IconButton(
-              iconSize: 16,
-              onPressed: () => onSubmit(textEditingController.text),
-              padding: const EdgeInsets.all(8),
-              icon: SvgPicture.asset(
-                ThemeIcon.search,
-                width: double.infinity,
-                height: double.infinity,
+          SizedBox(
+            width: height,
+            height: height,
+            child: Material(
+              color: ThemeStyleDark.primary,
+              borderRadius: const BorderRadius.all(Radius.circular(5)),
+              child: IconButton(
+                iconSize: 16,
+                onPressed: () => onSubmit(textEditingController.text),
+                padding: const EdgeInsets.all(8),
+                icon: SvgPicture.asset(
+                  assetIcon ?? ThemeIcon.search,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
               ),
             ),
           )

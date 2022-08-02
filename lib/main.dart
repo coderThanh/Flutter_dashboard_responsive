@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         primaryColor: ThemeStyleDark.primary,
         textTheme: themeTextDark,
+        splashColor: Colors.white12,
+        hoverColor: Colors.white.withOpacity(0.04),
         backgroundColor: ThemeStyleDark.surface,
         brightness: Brightness.dark,
       ),
