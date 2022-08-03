@@ -22,13 +22,20 @@ class Sidebar extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: ThemeStyleDark.padding * 2.5),
+            SizedBox(height: ThemeStyleDark.padding * 3),
             Image.asset(
               'assets/images/logo.png',
               width: 80,
               fit: BoxFit.contain,
             ),
-            SizedBox(height: ThemeStyleDark.padding * 4),
+            SizedBox(height: ThemeStyleDark.padding * 3),
+            Container(
+              height: 1,
+              decoration: BoxDecoration(
+                color: ThemeStyleDark.onSurface.withOpacity(0.08),
+              ),
+            ),
+            // SizedBox(height: ThemeStyleDark.padding * 2),
             MenuSideBarItem(
               text: "Dashboard",
               onTab: () {},

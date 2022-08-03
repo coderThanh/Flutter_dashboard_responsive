@@ -17,13 +17,15 @@ class PopupMenuItemInner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(
-          assetIcon,
-          color: ThemeStyleDark.onSurface.withOpacity(0.7),
+        SizedBox(
           width: 17,
           height: 17,
+          child: SvgPicture.asset(
+            assetIcon,
+            color: ThemeStyleDark.onSurface.withOpacity(0.7),
+          ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 7),
         Expanded(
           child: Text(
             text,

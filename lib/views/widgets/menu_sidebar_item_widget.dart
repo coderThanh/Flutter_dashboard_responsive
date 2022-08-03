@@ -37,11 +37,13 @@ class MenuSideBarItem extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SvgPicture.asset(
-                assetsIcon,
-                color: ThemeStyleDark.onSurface,
+              SizedBox(
                 width: 18,
                 height: 18,
+                child: SvgPicture.asset(
+                  assetsIcon,
+                  color: ThemeStyleDark.onSurface,
+                ),
               ),
               const SizedBox(width: 15),
               Expanded(
@@ -49,8 +51,9 @@ class MenuSideBarItem extends StatelessWidget {
                   text,
                   style: TextStyle(
                     color: ThemeStyleDark.onSurface,
-                    fontSize: 16,
+                    fontSize: 15,
                     height: 1.2,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),

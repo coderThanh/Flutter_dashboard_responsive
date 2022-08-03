@@ -3,13 +3,19 @@ import 'package:flutter/material.dart';
 TextTheme themeTextDark = const TextTheme(
   bodyText2: TextStyle(
     color: Colors.white,
-    fontSize: 16,
+    fontSize: 15,
+    fontWeight: FontWeight.normal,
+    height: 1.5,
+  ),
+  subtitle2: TextStyle(
+    color: Colors.white,
+    fontSize: 14,
     fontWeight: FontWeight.normal,
     height: 1.5,
   ),
   subtitle1: TextStyle(
     color: Colors.white70,
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: FontWeight.normal,
     height: 1.5,
   ),
@@ -27,7 +33,7 @@ TextTheme themeTextDark = const TextTheme(
   ),
   headline4: TextStyle(
     color: Colors.white,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     height: 1.3,
   ),

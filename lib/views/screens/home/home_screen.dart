@@ -1,6 +1,13 @@
+import 'package:dashboard_responsive_flutter/models/theme_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../models/clound_stotre.dart';
+import '../../../models/theme_icon.dart';
+import '../../widgets/popup_menu_item_inner_widget.dart';
+import '../../widgets/title_button_widget.dart';
 import 'components/header.dart';
+import 'components/my_files.dart';
 import 'components/sidebar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,7 +34,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: SingleChildScrollView(
                   child: Column(children: [
                     const Header(),
-                    const Placeholder(),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MyFiles(),
+                            Placeholder(),
+                          ],
+                        )),
+                        Container(
+                          width: 340,
+                          child: const Placeholder(),
+                        )
+                      ],
+                    )
                   ]),
                 ),
               ),
