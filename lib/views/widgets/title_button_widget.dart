@@ -1,3 +1,4 @@
+import 'package:dashboard_responsive_flutter/views/widgets/check_condition_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'button_widget.dart';
@@ -12,16 +13,15 @@ class TitleButton extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final String? textButton;
   final VoidCallback? onPress;
+  final String? textButton;
   final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
-    final Widget result;
-
-    if (textButton != null) {
-      result = Row(
+    return CheckCondition(
+      exception: textButton != null,
+      ifTrue: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
@@ -30,19 +30,16 @@ class TitleButton extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
           ButtonDefault(
-            text: textButton!,
+            text: textButton.toString(),
             onPress: onPress ?? () {},
             icon: icon,
           ),
         ],
-      );
-    } else {
-      result = Text(
+      ),
+      ifFalse: Text(
         title,
         style: Theme.of(context).textTheme.headline4,
-      );
-    }
-
-    return result;
+      ),
+    );
   }
 }

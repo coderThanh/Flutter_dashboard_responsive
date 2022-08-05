@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/theme_style.dart';
+import '../../models/theme_style_mobdel.dart';
 
 class ButtonDefault extends StatelessWidget {
   const ButtonDefault({
@@ -51,17 +51,17 @@ class ButtonDefault extends StatelessWidget {
       );
     }
 
-    return TextButton(
-      onPressed: onPress,
-      style: TextButton.styleFrom(
-        backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
-        primary: Theme.of(context).splashColor,
-        minimumSize: const Size(0, 0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 5,
-          vertical: 9,
+    return Container(
+      constraints: const BoxConstraints(minHeight: 0, minWidth: 0),
+      height: 32,
+      child: TextButton(
+        onPressed: onPress,
+        style: TextButton.styleFrom(
+          backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
+          primary: Theme.of(context).splashColor,
+          minimumSize: const Size(5, 5),
+          textStyle: const TextStyle(height: 1.1),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
         child: buttonContext,
       ),

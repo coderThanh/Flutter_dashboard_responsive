@@ -14,13 +14,13 @@ class ThemeIcon {
   static String menuStore = 'assets/icons/menu_store.svg';
   static String menuTask = 'assets/icons/menu_task.svg';
   static String oneDrive = 'assets/icons/one_drive.svg';
-  static String fileDoc = 'assets/icons/doc_file.svg';
-  static String fileFigma = 'assets/icons/Figma_file.svg';
-  static String fileExcel = 'assets/icons/excle_file.svg';
-  static String fileMedia = 'assets/icons/media_file.svg';
-  static String filePdf = 'assets/icons/pdf_file.svg';
-  static String fileSound = 'assets/icons/sound_file.svg';
-  static String fileXd = 'assets/icons/xd_file.svg';
+  // static String fileDoc = 'assets/icons/doc_file.svg';
+  // static String fileFigma = 'assets/icons/Figma_file.svg';
+  // static String fileExcel = 'assets/icons/excle_file.svg';
+  // static String fileMedia = 'assets/icons/media_file.svg';
+  // static String filePdf = 'assets/icons/pdf_file.svg';
+  // static String fileSound = 'assets/icons/sound_file.svg';
+  // static String fileXd = 'assets/icons/xd_file.svg';
   static String search = 'assets/icons/Search.svg';
   static String unkown = 'assets/icons/unknown.svg';
 }

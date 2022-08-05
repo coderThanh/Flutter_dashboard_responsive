@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../models/theme_icon.dart';
-import '../../models/theme_style.dart';
+import '../../models/theme_icon_model.dart';
+import '../../models/theme_style_mobdel.dart';
 
 class SearchDefault extends StatelessWidget {
   const SearchDefault({
     Key? key,
     this.width = 250,
-    this.height = 45,
+    this.height = 40,
     this.assetIcon,
     required this.onSubmit,
   }) : super(key: key);
@@ -25,11 +25,12 @@ class SearchDefault extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: const EdgeInsets.only(top: 5, left: 10, right: 5, bottom: 5),
+      padding: const EdgeInsets.only(top: 4, left: 10, right: 4, bottom: 4),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: ThemeStyleDark.surface70,
-        borderRadius: BorderRadius.all(Radius.circular(ThemeStyleDark.radius)),
+        borderRadius:
+            BorderRadius.all(Radius.circular(ThemeStyleDark.radius * 0.5)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +43,6 @@ class SearchDefault extends StatelessWidget {
               onSubmitted: onSubmit,
               decoration: const InputDecoration(
                 contentPadding: EdgeInsets.all(0),
-                // Clear Height
                 isDense: true,
                 border: InputBorder.none,
                 hintText: "Search",

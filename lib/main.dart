@@ -1,7 +1,6 @@
-import 'package:dashboard_responsive_flutter/models/theme_style.dart';
 import 'package:flutter/material.dart';
 
-import 'models/theme_text_style.dart';
+import 'models/theme_data_dark.dart';
 import 'views/screens/home/home_screen.dart';
 
 void main() {
@@ -18,14 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Dashboard Responsive',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        primaryColor: ThemeStyleDark.primary,
-        textTheme: themeTextDark,
-        splashColor: Colors.white12,
-        hoverColor: Colors.white.withOpacity(0.04),
-        backgroundColor: ThemeStyleDark.surface,
-        brightness: Brightness.dark,
-      ),
+      darkTheme: themeDataDark,
       home: const HomeScreen(),
     );
   }

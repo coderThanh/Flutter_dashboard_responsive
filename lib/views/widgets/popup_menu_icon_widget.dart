@@ -1,49 +1,48 @@
 import 'package:flutter/material.dart';
 
-import '../../models/theme_style.dart';
-import 'popup_menu_item_inner_widget.dart';
+import '../../models/theme_style_mobdel.dart';
 
 class PopupMenuIcon extends StatelessWidget {
   const PopupMenuIcon({
     Key? key,
     this.iconColor,
-    this.widthIcon,
-    this.heightIcon,
+    this.widthIcon = 30,
+    this.heightIcon = 30,
     this.backgroundIcon,
     this.listItem,
-    this.tooltip,
+    this.tooltip = 'More',
     this.iconData,
   }) : super(key: key);
 
-  final IconData? iconData;
   final Color? iconColor;
-  final double? widthIcon;
-  final double? heightIcon;
   final Color? backgroundIcon;
+  final String tooltip;
+  final double widthIcon;
+  final double heightIcon;
+  final IconData? iconData;
   final List<PopupMenuEntry>? listItem;
-  final String? tooltip;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widthIcon ?? 30,
-      height: heightIcon ?? 30,
+      width: widthIcon,
+      height: heightIcon,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       decoration: BoxDecoration(
         color: backgroundIcon ?? Colors.transparent,
-        borderRadius: const BorderRadius.all(const Radius.circular(5)),
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
       ),
       child: Material(
         color: Colors.transparent,
         child: PopupMenuButton(
-          tooltip: tooltip ?? 'More',
+          tooltip: tooltip,
           padding: const EdgeInsets.all(0),
           position: PopupMenuPosition.under,
           icon: Icon(
             iconData ?? Icons.more_vert,
             color: iconColor ?? ThemeStyleDark.onSurface.withOpacity(0.5),
           ),
-          splashRadius: widthIcon ?? 30,
+          splashRadius: widthIcon,
           elevation: 10,
           itemBuilder: ((context) => listItem ?? []),
         ),

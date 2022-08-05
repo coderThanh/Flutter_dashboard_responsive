@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/theme_style.dart';
+import '../../../../models/theme_style_mobdel.dart';
+import '../../../widgets/responsive_widget.dart';
 import '../../../widgets/search.dart';
 import '../../../widgets/title_menu.dart';
 import 'profile_menu_popup.dart';
@@ -13,17 +14,35 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: ThemeStyleDark.padding,
-        horizontal: ThemeStyleDark.padding,
+      padding: EdgeInsets.only(
+        bottom: ThemeStyleDark.padding,
       ),
       child: Row(
         children: [
           const TitleMenu(),
           SizedBox(width: ThemeStyleDark.padding),
-          SearchDefault(onSubmit: (String value) {}),
+          Responsive(
+            mediumDesktop: SearchDefault(
+              onSubmit: (String value) {},
+              width: 350,
+            ),
+            tablet: SearchDefault(
+              onSubmit: (String value) {},
+              width: 180,
+            ),
+            mobile: SearchDefault(
+              onSubmit: (String value) {},
+              width: 150,
+            ),
+          ),
           SizedBox(width: ThemeStyleDark.padding),
-          const ProfileMenuPopup(),
+          const Responsive(
+            tablet: ProfileMenuPopup(),
+            mobile: ProfileMenuPopup(
+              showTitle: false,
+              width: 70,
+            ),
+          ),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/theme_icon.dart';
-import '../../../../models/theme_style.dart';
+import '../../../../models/theme_icon_model.dart';
+import '../../../../models/theme_style_mobdel.dart';
 import '../../../widgets/menu_sidebar_item_widget.dart';
 
 class Sidebar extends StatelessWidget {
@@ -14,7 +14,7 @@ class Sidebar extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      width: 250,
+      width: 180,
       height: size.height,
       decoration: BoxDecoration(
         color: ThemeStyleDark.surface70,
@@ -35,7 +35,6 @@ class Sidebar extends StatelessWidget {
                 color: ThemeStyleDark.onSurface.withOpacity(0.08),
               ),
             ),
-            // SizedBox(height: ThemeStyleDark.padding * 2),
             MenuSideBarItem(
               text: "Dashboard",
               onTab: () {},
